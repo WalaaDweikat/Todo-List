@@ -10,14 +10,20 @@ document.querySelector(".close").addEventListener('click',e=>{
 let a = 0;
 
     document.querySelector(".add").addEventListener('click', e=>{
+        let max = 0;
+        for(let j=0; j<localStorage.length; j++)
+        {
+            if(max< Number(localStorage.key(j)))max=Number(localStorage.key(j));
+        }
+        a=max+1;
     const input = document. createElement("input"); 
     input. setAttribute('type', 'text');
-    input. setAttribute('name', 'in'+a);
+    input. setAttribute('name',a);
     input.value=document.querySelector('.task').value;
     document.querySelector('.task').value="";
     const i = document.createElement('i');
     i.setAttribute("class", "fa fa-trash");
-    i. setAttribute('id', 'in'+a);
+    i. setAttribute('id',a);
     const li =document.createElement('li');
     li.appendChild(i);
     li.appendChild(input);
