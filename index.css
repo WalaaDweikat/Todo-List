@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+body{
+    background-color: #dde3fb
+}
+
+
+
+.container{
+    font-family: 'Itim', cursive;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 9%;
+
+}
+
+
+h1{
+    display: block;
+    color: white;
+    background-color:#9e36da;
+    height: 1.3em;
+    width: 11.15em;
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 0.5em;
+}
+
+.list{
+display: block;
+background-color: white;
+width:23em;
+text-align: left;
+font-size: 1.3rem;
+height: 12em;
+overflow-y: scroll;
+overflow-x: hidden;
+
+}
+
+.container ul li {
+
+    list-style-type: none;
+    margin: 1em;
+  }
+
+.container ul li i{
+   margin-right: 1.4em;
+   cursor: pointer;
+
+}
+ul li input{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    font-family: 'Itim', cursive;
+    font-size: 1.3rem;
+    color:black;
+    cursor: pointer;
+
+}
+.btn button{
+    font-family: 'Itim', cursive;
+    width:9em;
+    font-size: 1.3rem;
+    height: 2em;
+    color:white;
+    background-color: rgba(137, 43, 226, 0.883);
+    border: none;
+    border-radius: 50px;
+    margin-left: 30%;
+
+}
+
+.btn{
+    display: block;
+    background-color: white;
+    height:1.5em;
+    width: 29.9em;
+}
+.task{
+    margin-top: 2em;
+    background-color: white;
+    border: none;
+    color:black;
+    font-family: 'Itim', cursive;
+    font-size: 1.3rem;
+    width:15em;
+    height:1.5em;
+
+}
+.add{
+    font-family: 'Itim', cursive;
+    font-size: 1.3rem;
+    width:5em;
+    height:1.6em;
+    border: none;
+    background-color:black;
+    color:white;
+}
+
+.close{
+    font-family: 'Itim', cursive;
+    font-size: 1.3rem;
+    height:1.6em;
+    border: none;
+    background-color:black;
+    color:white;
+}
+.addnewTask{
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    .container{
+        width:fit-content
+
+    }
+  }
