@@ -6,10 +6,11 @@ document.querySelector(".btn").addEventListener('click',e=>{
 document.querySelector(".close").addEventListener('click',e=>{
     document.querySelector(".addnewTask").style.display="none";
 })
-
+const taskInput = document.querySelector('.task');
 let a = 0;
 
     document.querySelector(".add").addEventListener('click', e=>{
+    if(taskInput.value!== ""){
         let max = 0;
         for(let j=0; j<localStorage.length; j++)
         {
@@ -19,8 +20,8 @@ let a = 0;
     const input = document. createElement("input"); 
     input. setAttribute('type', 'text');
     input. setAttribute('name',a);
-    input.value=document.querySelector('.task').value;
-    document.querySelector('.task').value="";
+    input.value=taskInput.value;
+    taskInput.value="";
     const i = document.createElement('i');
     i.setAttribute("class", "fa fa-trash");
     i. setAttribute('id',a);
@@ -30,6 +31,10 @@ let a = 0;
     document.querySelector('.list ul').appendChild(li);
        a++;
 
+       const key = input.name;
+       const value = input.value;
+   
+       localStorage.setItem(key,value);
           
         i.addEventListener('click', s=>{
             const ik = s.target.id;
@@ -40,17 +45,16 @@ let a = 0;
         });
     
         input.addEventListener('change', b=>{
-            const inputKey = localStorage.key(b.target.name);
-            const v = input.value;
+            const inputKey = b.target.name;
+            const v =input.value;
+            localStorage.removeItem(inputKey); 
             localStorage.setItem(inputKey,v);
+
+
+
         });
-
-    const key = input.name;
-    const value = input.value;
-
-    localStorage.setItem(key,value);
-
-
+    }
+    
 
  });
 
@@ -77,16 +81,18 @@ let a = 0;
         document.querySelector('.list ul').appendChild(li);
 
         input.addEventListener('change', b=>{
-            const inputKey = localStorage.key(b.target.name);
-            const v = input.value;
+            const inputKey = b.target.name;
+            const v =input.value;
+            localStorage.removeItem(inputKey); 
             localStorage.setItem(inputKey,v);
+           
         });
 
          i.addEventListener('click', s=>{
             const ik = s.target.id;
             localStorage.removeItem(ik); 
             document.querySelector('.list ul').removeChild(s.target.parentElement); 
-                       
+
         });
      }
     
